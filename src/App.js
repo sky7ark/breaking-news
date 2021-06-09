@@ -20,8 +20,7 @@ function App() {
   }
   const [articles, setArticles] = useState([])
   useEffect( () => {
-    const url = 'https://newsapi.org/v2/everything?q=bitcoin&apiKey=1e6ce21a301f458690f983559d725963'
-    fetch(url)
+    fetch('https://newsapi.org/v2/everything?q=bitcoin&apiKey=1e6ce21a301f458690f983559d725963')
     .then(res => res.json())
     .then(data => setArticles(data.articles))
   },[])
@@ -30,11 +29,10 @@ function App() {
       <h1 style={h}>Latest Breaking News</h1>
       <div style = {styles}>
       {
-        articles.map(article => <News article={article}></News>)
+       articles && articles.map(article => <News article={article}></News>)
       }
       </div>
     </div>
   );
 }
-
 export default App;

@@ -39,7 +39,7 @@ const News = (props) => {
                             {title}
                          </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            {seeMore?description: description.slice(0,100)}
+                            {seeMore?description: description.slice(0,50)}
                             <a onClick={() => setSeeMore(!seeMore)}>{seeMore?<b>  Show less</b>:<b>  Read More</b>}</a>
                          </Typography>
                     </CardContent>
@@ -55,8 +55,5 @@ const News = (props) => {
             </Card>
         </div>
     );
-
-
 };
-
 export default News;
